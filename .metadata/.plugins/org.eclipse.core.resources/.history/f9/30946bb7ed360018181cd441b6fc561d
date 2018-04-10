@@ -1,0 +1,88 @@
+package fun.Package.JKampf;
+
+public class LoBot {
+private String response;
+private String userInput;
+private boolean isInsult;
+private boolean isFunny;
+private boolean isSad; 
+private boolean isAwake; 
+private int inputCount;
+
+
+public LoBot() {
+	
+}
+
+private boolean detectInsult() { 
+	if(this.response.contains("fuck")) {
+		isInsult=true;
+		
+	}
+	if(this.response.contains("bitch")) {
+		isInsult=true;
+	}
+	if(this.response.contains("kill yourself")) {
+		isInsult=true;
+	}
+	else isInsult=true;
+return this.isInsult;
+}
+
+private boolean detectFunny() { 
+	if(this.response.contains("lol")) {
+		isFunny=true;
+	}
+	if(this.response.contains("haha")) {
+		isFunny=true;
+	}
+	else {
+		isFunny=false;
+	}
+	return this.isFunny;	
+}
+
+private boolean detectSad() {
+	if(this.response.contains(":(")) {
+		isSad=true;
+	}
+	return this.isSad;
+}
+
+private boolean detectAwake() {
+	if(this.response.compareToIgnoreCase("Wake up, LoBot!")==0&&inputCount==1) {
+		isAwake=true;
+	}
+	else {
+		inputCount=0;
+		isAwake=false;
+	}
+		
+	return this.isAwake;
+}
+public void respond(String input) {
+	this.response=input;
+	this.detectAwake();
+	this.detectFunny();
+	this.detectSad();
+	this.detectInsult();
+	if(isInsult&&!isSad&&!isFunny) {
+		if(input.contains("fuck")) {
+			System.out.println("Well,fuck you too bitch.");
+		}
+		if(input.contains("shit")) {
+			System.out.println("Well, YOU'RE shit. How about that, huh?");
+		}
+		if(input.contains("bitch")) {
+			System.out.println("I know you are but rubber and glue sticks to you... or something. Idk. BITCH.");
+		}
+	} 
+	if(isFunny&&!isSad&&!isInsult) {
+		System.out.println("Haha yeah lol so funny please say more. Or don't. That's good too.");
+	}
+	if(!isFunny&&isSad&&!isInsult) {
+		System.out.println("I've detected that your are sad. This gives me strength.");
+	}
+	
+}
+}

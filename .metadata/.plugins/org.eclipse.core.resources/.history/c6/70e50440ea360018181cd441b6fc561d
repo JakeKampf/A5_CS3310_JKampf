@@ -1,0 +1,113 @@
+package fun.Package.JKampf;
+
+public class LoBot {
+private String response;
+private String userInput;
+private boolean isInsult;
+private boolean isFunny;
+private boolean isSad; 
+private boolean isAwake; 
+private int inputCount;
+
+
+public LoBot() {
+	
+}
+
+public String getRespose() {
+	return respose;
+}
+
+
+public void setRespose(String respose) {
+	this.respose = respose;
+}
+
+
+public String getUserInput() {
+	return userInput;
+}
+
+
+public void setUserInput(String userInput) {
+	this.userInput = userInput;
+}
+
+
+public boolean isInsult() {
+	return isInsult;
+}
+
+
+public void setInsult(boolean isInsult) {
+	this.isInsult = isInsult;
+}
+
+
+public boolean isFunny() {
+	return isFunny;
+}
+
+
+public void setFunny(boolean isFunny) {
+	this.isFunny = isFunny;
+}
+
+
+public boolean isSad() {
+	return isSad;
+}
+
+
+public void setSad(boolean isSad) {
+	this.isSad = isSad;
+}
+
+
+public boolean isAwake() {
+	
+	return isAwake;
+}
+
+
+public void setAwake(boolean isAwake) {
+	this.isAwake = isAwake;
+}
+
+private boolean detectInsult() { 
+	
+return this.isInsult;
+}
+
+private boolean detectFunny() { 
+	if(this.response.contains("lol")) {
+		isFunny=true;
+	}
+	if(this.response.contains("haha")) {
+		isFunny=true;
+	}
+	else {
+		isFunny=false;
+	}
+	return this.isFunny;	
+}
+
+private boolean detectSad() {
+	if(this.response.contains(":(")) {
+		isSad=true;
+	}
+	return this.isSad;
+}
+
+private boolean detectAwake() {
+	if(this.response.compareToIgnoreCase("Wake up, LoBot!")==0&&inputCount==1) {
+		isAwake=true;
+	}
+	else {
+		inputCount=0;
+		isAwake=false;
+	}
+		
+	return this.isAwake;
+}
+}

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"a4_3310_JKampf","l":"BinarySearchTree"},{"p":"a4_3310_JKampf","l":"MaxHeap"},{"p":"a4_3310_JKampf","l":"MinHeap"},{"p":"a4_3310_JKampf","l":"MyNode"},{"p":"a4_3310_JKampf","l":"TestClass"}]

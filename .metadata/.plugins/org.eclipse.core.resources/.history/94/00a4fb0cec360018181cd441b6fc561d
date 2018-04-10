@@ -1,0 +1,17 @@
+package fun.Package.JKampf;
+
+import java.util.Scanner;
+
+public class AITest {
+
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//LoBot loBot = new LoBot();
+//String input;
+Scanner scan = new Scanner(System.in);
+System.out.println("Say something mean to LoBot, if you dare.");
+//input = scan.nextLine();
+//loBot.respond(input);
+	}
+
+}
